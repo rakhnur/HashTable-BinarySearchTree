@@ -10,13 +10,16 @@ public class MyHashTable <K,V> {
 
     }
 
+    /*
     private int hash(K key) {
 
     }
 
+
     public void put (K key, V value) {
 
     }
+
 
     public V get(K key) {
 
@@ -34,5 +37,5 @@ public class MyHashTable <K,V> {
 
     }
 
-
+     */
 }
