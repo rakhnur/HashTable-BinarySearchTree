@@ -1,27 +1,53 @@
 package com.company;
 
 public class MyBinarySearchTree {
-/*    private Node root;
-    private class Node {
-        private K key;
-        private V val;
-        private Node left, right;
-        public Node (K key, V val) {
-            this.key = key;
-            this.val = val;
+    Node root;
+
+    MyBinarySearchTree() {
+        root = null;
+        }
+
+    // inserting of new value
+    MyBinarySearchTree(int value){
+        root = new Node(value);
+    }
+
+    Node insert(Node root, int key){
+        if (root == null)
+        {
+            root = new Node(key);
+            return root;
+        }
+
+        if (key < root.key)
+        {
+            root.left = insert(root.left, key); // if key < root, then key goes to the left side of node
+        }
+
+        else if (key > root.key) {
+            root.right = insert(root.right, key); // if key > root, then key goes to the right side of node
+        }
+
+        return root;
+    }
+
+    // to print current left and right items
+    void printOrder(Node root){
+        if (root != null){
+            printOrder(root.left);
+            System.out.println(root.key);
+            printOrder(root.right);
         }
     }
-    public void put(K key, V val){
+
+    // to search items
+    public Node search(Node root, int key){ if (root == null || root.key == key) {
+            return root;
+        }
+
+        if (root.key < key){ return search(root.right, key);}
+
+        return search(root.left, key);
 
     }
-    public V get(K key){
-
-    }
-    public void delete (K key){
-
-    }
-    public Iterable<K> iterator(){
-
-    }
- */
 }
