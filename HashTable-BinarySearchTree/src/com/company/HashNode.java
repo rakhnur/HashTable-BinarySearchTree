@@ -1,17 +1,14 @@
 package com.company;
 
 public class HashNode <K,V> {
-    private K key;
-    private V value;
-    private HashNode <K, V> next;
+    K key;
+    V value;
+    final int hC;
+    HashNode<K,V> next;
 
-    public HashNode(K key, V value) {
+    public HashNode(K key, V value, int hC){
         this.key = key;
         this.value = value;
-    }
-
-    @Override
-    public String toString() {
-        return "{" + key + " " + value + "}";
+        this.hC = hC;
     }
 }
