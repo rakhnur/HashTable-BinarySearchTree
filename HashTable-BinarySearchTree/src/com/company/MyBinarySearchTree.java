@@ -50,4 +50,37 @@ public class MyBinarySearchTree {
         return search(root.left, key);
 
     }
+
+    // to return min value
+    int min (Node root){
+        int min = root.key;
+
+        while (root.left != null){
+            min = root.left.key;
+            root = root.left;
+        }
+
+        return min;
+    }
+
+    // for deleting Node
+    Node delNode(Node root, int k){
+        if (root == null){return root;}
+
+        if (k < root.key){root.left = delNode(root.left, k);}
+
+        else if (k > root.key){root.right = delNode(root.right, k);}
+
+        else {
+            if (root.left == null){return root.right;}
+
+            else if (root.right == null){return root.left;}
+
+            root.key = min(root.right);
+
+            root.right = delNode(root.right, root.key);
+        }
+        return root;
+    }
+
 }
